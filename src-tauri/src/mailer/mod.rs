@@ -2,6 +2,14 @@ use lettre::message::header::ContentType;
 use lettre::transport::smtp::authentication::Credentials;
 use lettre::{Message, SmtpTransport, Transport};
 
+pub struct Sender {
+    form: String,
+    smtp_host: String,
+    smtp_port: u16,
+    smtp_user: String,
+    smtp_password: String,
+}
+
 // pub fn send_smtp() -> anyhow::Result<()> {
 //     let email = Message::builder()
 //         .from("NoBody <nobody@domain.tld>".parse().unwrap())
